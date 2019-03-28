@@ -15,5 +15,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="D:/download/downloads/mysql-connector-java-8.0.12/mysql-connector-java-8.0.12/mysql-connector-java-8.0.12.jar"/>
 	<classpathentry kind="lib" path="C:/Users/WINDOWS/apache-tomcat-8.0.53/lib/servlet-api.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernatelibary"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

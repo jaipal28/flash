@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<% 
+if(session.getAttribute("username")==null){
+	response.sendRedirect("error.jsp");
+}
+%>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 com-md-7">

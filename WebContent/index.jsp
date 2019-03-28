@@ -14,10 +14,13 @@
 
 <div class="Login-page">
     <h2 align="center">Login To FertilizerShop</h2>
+    
+    
   <div class="form">
     <form action="Fertlizerlogin" method="post">
         
        <table class="table" width="272px">
+       <p style="color:red">${errormessage }</p>
                     <tr>
                         <td><input id="id_username" name="user"
                                    type="text" class="form-control" placeholder="Username"></td>

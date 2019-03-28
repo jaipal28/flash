@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/Addupdate")
@@ -25,7 +26,7 @@ public class Addupdate extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	//String cancel = request.getParameter("cancel");
-	//String submit = request.getParameter("sub");
+	String submit = request.getParameter("sub");
 	//String cancel = request.getParameter("cancel");
 	
 String name = request.getParameter("company");
@@ -33,7 +34,8 @@ String money = request.getParameter("rupees");
 
 String idq = request.getParameter("id");
 int id = Integer.parseInt(idq);
-
+//   HttpSession sessions = request.getSession();
+//   sessions.setAttribute("id", ids);
 
 	PrintWriter pw = response.getWriter();
 	//if ("Submit".equals(submit)){
@@ -42,12 +44,12 @@ int id = Integer.parseInt(idq);
 		e.setName(name);
 		e.setMoney(money);
 		e.setId(id);
-		 Companydoo.update(e);
+int updates =		 Companydoo.update(e);
 		response.sendRedirect("home.jsp");
 		
-	//}
+	}
 //	else  {
-		//response.sendRedirect("home.jsp");
+	//	response.sendRedirect("home.jsp");
 	//}
 
-}}
+}

@@ -18,22 +18,15 @@
 <body>
 <%
 
+if(session.getAttribute("username")==null){
+	response.sendRedirect("error.jsp");
+}
+
+
 String idq = request.getParameter("id");
 int id = Integer.parseInt(idq);
 
 Comp e=Companydoo.getEmployeeById(id);
-
-/*try {
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection  con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jaipal");
-		 PreparedStatement ps=con.prepareStatement("select * from `jaipal`.`addcompny` where id=?"); 
-		ps.setString(1,id);
-        ResultSet rs=ps.executeQuery();  
-        
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}*/
 
 %>
        
@@ -67,7 +60,7 @@ Comp e=Companydoo.getEmployeeById(id);
 
 
         <label class="control-label col-sm-2"><label for="id_Name">Name:</label></label>
-        <div class="col-sm-10"><input type="text" name="company" value="<%=e.getName()%>" maxlength="100" required="" id="id"></div>
+        <div class="col-sm-10"><input type="text" name="company" value="<%=e.getName() %>" maxlength="100" required="" id="id"></div>
     </div>
 
     <div class="form-group">
@@ -75,10 +68,8 @@ Comp e=Companydoo.getEmployeeById(id);
             <span class="text-danger small"></span>
         </div>
         <label class="control-label col-sm-2"><label for="id_Amount_To_Pay">Amount To Pay:</label></label>
-        <div class="col-sm-10"><input type="number" name="rupees" value="<%=e.getMoney()%>"
-        ></div>
-     
-    </div>
+        <div class="col-sm-10"><input type="number" name="rupees" value="<%=e.getMoney() %>"   ></div>
+           </div>
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">

@@ -1,6 +1,7 @@
 package fertilzer;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,8 +28,8 @@ public class Fertlizerlogin extends HttpServlet {
 			
 					Logindoo li = new Logindoo ();
 			
-					
-				
+				response.setContentType("text/html");
+			PrintWriter pw = response.getWriter();
 		
 			if(li.checkuser(usersq, passs)){
 				HttpSession session = request.getSession();
@@ -38,9 +39,12 @@ public class Fertlizerlogin extends HttpServlet {
 				rd.forward(request, response);
 			}
 			else {
+				request.setAttribute("errormessage", "incorrect username or password  ");
+			//	pw.print("invalid username");
+				
 				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 				
-				rd.include(request, response);
+				rd.forward(request, response);
 			}
 			
 	}

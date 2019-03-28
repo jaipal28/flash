@@ -1,6 +1,13 @@
 package fertilzer;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.Table;
+@Entity
+@Table(name="addcompany")
 public class Comp {
+	@Id
 	private int id;
 	private String name,money ;
 	public int getId() {
